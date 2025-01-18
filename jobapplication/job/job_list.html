@@ -1,0 +1,24 @@
+<!-- job/templates/job/job_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+</head>
+<body>
+    <h1>Job Listings</h1>
+    
+    <ul>
+        {% for job in jobs %}
+            <li>
+                <strong>{{ job.title }}</strong> <br>
+                {{ job.description }} <br>
+                <em>Posted on: {{ job.posted_date }}</em>
+            </li>
+        {% empty %}
+            <li>No jobs available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
